@@ -1,5 +1,5 @@
 """
-Test for the user API.
+Tests for the user API.
 """
 from django.test import TestCase
 from django.contrib.auth import get_user_model
@@ -49,7 +49,7 @@ class PublicUserApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
-    def test_passsword_too_short_error(self):
+    def test_password_too_short_error(self):
         """Test an error is returned if password less tha 5 chars."""
         payload = {
             'email': 'test@example.com',
