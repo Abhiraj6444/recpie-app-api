@@ -1,12 +1,12 @@
 """
 Tests for the user API.
 """
-from django.test import TestCase
-from django.contrib.auth import get_user_model
-from django.urls import reverse
+from django.test import TestCase  # type: ignore
+from django.contrib.auth import get_user_model  # type: ignore
+from django.urls import reverse  # type: ignore
 
-from rest_framework.test import APIClient
-from rest_framework import status
+from rest_framework.test import APIClient  # type: ignore
+from rest_framework import status  # type: ignore
 
 
 CREATE_USER_URL = reverse('user:create')
@@ -50,7 +50,7 @@ class PublicUserApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_password_too_short_error(self):
-        """Test an error is returned if password less tha 5 chars."""
+        """Test an error is returned if password less than 5 chars."""
         payload = {
             'email': 'test@example.com',
             'password': 'pw',
